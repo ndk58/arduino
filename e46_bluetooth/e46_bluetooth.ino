@@ -51,7 +51,13 @@
    Data bytes are ONLY checked when the MCP2515 is in 'MCP_STDEXT' mode via the begin
    function, otherwise ('MCP_STD') only the ID is checked.
 ***********************************************************************************/
-
+/* E46 I-BUS mapping
+ * Vol + 0x0A/0xF5   50 04 68 32 11 1F
+ * Vol - 0x0B/0xF4   50 04 68 32 10 1E
+ * Mute  0x0C/0xF3   50 04 68 3B 80 27
+ * Prev  0x42/0xBD   50 04 68 3B 08 0F
+ * Next  0x43/0xBC   50 04 68 3B 01 06
+ */
 
 #include <mcp_can.h>
 #include <SPI.h>
@@ -101,7 +107,7 @@ void setup()
   digitalWrite(EQ_PIN, LOW);
                                         // 0000 0111 1111 11 11 0000 0000 0000 0000
   CAN0.init_Mask(0,0,0x07FF0000);                 // Init first mask... (these bits are checked 0x01D0-0x01DF)
-  CAN0.init_Filt(0,0,0x01D60000);                 // Init first filter... 0x1D6
+  CAN0.init_Filt(0,0,0x01D60000);                 // Init first filter... 0x1D6 (for MFL)
   //CAN0.init_Filt(1,0,0x01D60000);                 // Init second filter...
   
   CAN0.init_Mask(1,0,0x07FF0000);                // Init second mask... (yes this is needed as Filter Mask 1 is associated only with Filter 1 and 2)
