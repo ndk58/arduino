@@ -1,6 +1,7 @@
 
-// BMW E81/E87 KCAN BT hands free interface
+// BMW E46 BT hands free interface
 // Written by Luca Forattini (07/02/2019)
+// Adapted by Paolo Bertolino for e46 (15/02/2022)
 // Freely useable for non commercial purposes as long as credit is given where credit is due!
 // Suggested board is the Arduino Uno or mini
 // CAN Bus lib by Cory Fowler https://github.com/coryjfowler/MCP_CAN_lib
@@ -21,6 +22,9 @@
 // This is due to the fact that the K-CAN does not report any button release codes as stated above. I used the above routine and added a specific check for the PLAY
 // button. When the play button is pressed a flag is set and a timer is reset. When the button is released and the timer expires, if the PLAY flag was set the button
 // is pressed.
+
+// 15/02/2022
+// Adapting the code for the e46
 
 /*  The MC2515 has 2 Mask registers and 6 Filters. The Mask tells the MCP which BITS the filters should check
  *  this must be fully understood to avoid filtering issues. Check the logic flow chart on the documentation.
