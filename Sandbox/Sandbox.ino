@@ -4,7 +4,7 @@ int pressedpin = 0;
 // define control button pins
 #define MODE_PIN 4
 #define PLAY_PIN 7
-#define NEXT_PIN 8
+#define NEXT_PIN 9
 #define PREV_PIN 12
 #define EQ_PIN 13
   
