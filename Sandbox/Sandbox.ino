@@ -39,15 +39,14 @@ void pressbutton(int pin)
   Serial.println("Button pressed");
   pressedpin = pin;         // save pressed function/pin
   //pinMode(pin, OUTPUT);     // set pin as output to drive BT IC input
-  delay (500);
-  digitalWrite(pin, LOW);   //  toggle switch
-  digitalWrite(13, LOW);   //  toggle switch
-  delay (500);
   digitalWrite(pin, HIGH);
-  digitalWrite(13, HIGH);   //  toggle switch
-  delay (500);
+  delay (800);
   //pinMode(pin, INPUT);      //
-  delay (500);
   digitalWrite(pin, LOW);   // S
-  digitalWrite(13, LOW);   //  toggle switch
+  delay (800);
+  digitalWrite(pin, HIGH);
+  delay (800);
+  //pinMode(pin, INPUT);      //
+  digitalWrite(pin, LOW);   // S
+
 }
